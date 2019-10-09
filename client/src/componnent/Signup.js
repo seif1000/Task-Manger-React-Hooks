@@ -23,7 +23,7 @@ import {withBack} from './HOC/isAuth';
     
       
         try {
-            const res = await axios.post('http://localhost:5000/users',inputs);
+            const res = await axios.post('/users',inputs);
             setUser((user)=>({...user,authToken:res.data.token}));
            
             localStorage.setItem('jwtToken',res.data.token);

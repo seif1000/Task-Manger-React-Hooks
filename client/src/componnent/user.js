@@ -20,7 +20,7 @@ import FormData from 'form-data';
         const token = localStorage.getItem('jwtToken');
          
           const res = await axios.get(
-              `http://localhost:5000/users/avatar`,
+              `/users/avatar`,
               {
                   headers:{  "Authorization" :`Bearer ${token}` },
                   responseType:'arraybuffer'
@@ -55,7 +55,7 @@ import FormData from 'form-data';
           const file = modifier.image;
           var data = new FormData()
           data.append('avatar',file)
-          const res = await  axios.post('http://localhost:5000/users/me/avatar', data,
+          const res = await  axios.post('/users/me/avatar', data,
                 {
                    headers: {"Authorization" :`Bearer ${token}`},
                    responseType:'arraybuffer'
@@ -78,7 +78,7 @@ import FormData from 'form-data';
         const token = localStorage.getItem('jwtToken');
          
         const res = await axios.get(
-            `http://localhost:5000/users/me`,
+            `/users/me`,
             {
                 headers:{  "Authorization" :`Bearer ${token}` },
              
@@ -103,7 +103,7 @@ import FormData from 'form-data';
     
         try {
           const res = await axios.patch(
-            `http://localhost:5000/users/me`,inputs,
+            `/users/me`,inputs,
             {
                 headers:{  "Authorization" :`Bearer ${token}` },
              
@@ -123,7 +123,7 @@ import FormData from 'form-data';
      const removeMe =async  ()=>{
       const token = localStorage.getItem('jwtToken');
        try {
-        const res = await  axios.delete('http://localhost:5000/users/me', {
+        const res = await  axios.delete('/users/me', {
           headers:{  "Authorization" :`Bearer ${token}` },
        
         });

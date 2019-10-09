@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const {mongoURI} = require('../config/key');
 
-mongoose.connect("mongodb://localhost/task-manger-react", {
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

@@ -25,7 +25,7 @@ import {useMediaQuery}from 'react-responsive';
     const AddTask  = async(e)=>{
         
         const token = localStorage.getItem('jwtToken');
-       const res = await axios.post(`http://localhost:5000/tasks`,{
+       const res = await axios.post(`/tasks`,{
            description:inputs.description,
            completed:task.completed
        },{  headers:{

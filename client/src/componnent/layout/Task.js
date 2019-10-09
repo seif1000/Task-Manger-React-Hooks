@@ -11,7 +11,7 @@ export default function Task(props) {
         const token = localStorage.getItem('jwtToken');
          
         const res = await axios.get(
-            `http://localhost:5000/users/me`,
+            `/users/me`,
             {
                 headers:{  "Authorization" :`Bearer ${token}` },
              

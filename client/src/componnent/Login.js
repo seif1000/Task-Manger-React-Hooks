@@ -20,7 +20,7 @@ function Login(props) {
     
       
         try {
-            const res = await axios.post('http://localhost:5000/users/login',inputs);
+            const res = await axios.post('/users/login',inputs);
             setUser((user)=>({...user,authToken:res.data.token}));
             localStorage.setItem('jwtToken',res.data.token);
              props.history.push('/tasks');

@@ -24,7 +24,7 @@ import {Context} from '../context';
         const token = localStorage.getItem('jwtToken');
          
           const res = await axios.get(
-              `http://localhost:5000/users/avatar`,
+              `/users/avatar`,
               {
                   headers:{  "Authorization" :`Bearer ${token}` },
                   responseType:'arraybuffer'
@@ -45,7 +45,7 @@ import {Context} from '../context';
      const {id}  =props.match.params;
      const fetchPost =async ()=>{
         const token = localStorage.getItem('jwtToken');
-       const res = await axios.get(`http://localhost:5000/tasks/${id}`,{
+       const res = await axios.get(`/tasks/${id}`,{
         headers:{
             "Authorization" :`Bearer ${token}`
         }
@@ -66,7 +66,7 @@ import {Context} from '../context';
      }
      const editTask = async()=>{
         const token = localStorage.getItem('jwtToken');
-          const res = await axios.patch(`http://localhost:5000/tasks/${id}`,{
+          const res = await axios.patch(`/tasks/${id}`,{
               description:inputs.description,
               completed:task.completed
           },{  headers:{
