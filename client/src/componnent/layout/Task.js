@@ -28,7 +28,7 @@ export default function Task(props) {
     }
    useEffect(()=>{
        getMe();
-   })
+   },[])
     return (
         <div  className="task border d-flex flex-column  mt-3 shadow ">
              

@@ -82,7 +82,7 @@ const mobileOrTabletteStyled = {
 }
     return (
         <div>
-        {isDesktopOrLaptop &&   <div  id="Add" style={
+                {isDesktopOrLaptop && <div  id="Add" style={
                desktopStyled
             }>
         <div className='task-add shadow'>
@@ -112,7 +112,8 @@ const mobileOrTabletteStyled = {
           </form>
        </div>
        </div> 
-    }
+                }
+ 
     {
         isTabletOrMobileDevice &&  <div  id="Add" style={mobileOrTabletteStyled}>
         <div className='task-add shadow'>
@@ -142,7 +143,7 @@ const mobileOrTabletteStyled = {
           </form>
        </div>
        </div> 
-        }
+        } 
         </div>
        
   
