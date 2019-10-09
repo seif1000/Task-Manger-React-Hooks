@@ -1,0 +1,64 @@
+body{
+     margin: 0;
+    padding: 0;
+ }
+  .bodySignupLogin{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url("../asset/body.jpg") no-repeat center  fixed; 
+    background-size: cover;
+  }
+  
+  
+  .signupLoginForm{
+    padding: 3em 2em;
+    margin-bottom: 12px;
+     background: #eae672;
+     transform: rotate(2deg);
+     
+    box-shadow: 1px 3px 5px 1px grey;
+    position: relative;
+    animation-name: swing;
+    animation-duration: 1S
+   
+  }
+  
+  .LoginSignupButton{
+    background:  #247BA0;
+    outline: none;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: white;
+
+    
+  }
+  .Pin{
+      position: absolute;
+      top:10px;
+      left: 90%;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: radial-gradient(#8B0000, #B22222, #DC143C);;
+     
+  }
+  .Errors{
+    color: #DC143C;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  @keyframes swing{
+     0%{transform: rotate(0)}
+     25%{transform: rotate(3deg)}
+     50%{transform: rotate(-3deg)}
+     100%{transform: rotate(2deg)}
+  }
+
+  h5{
+    text-align: center;
+  }
+  
+  

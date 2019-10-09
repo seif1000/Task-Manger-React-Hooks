@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+.loginedNavbar{
+      background :#F8F8F8; 
+     
+      box-shadow: 2px 3px 2px 1px #F0F0F0;
+      
+}
+.loginedNavbar.nav-item{
+    color:white !important;
+}
+.LogoutButton{
+    background: transparent;
+    outline: none;
+    border: none;
+    
+    margin-top: 8px;
+
+}
+.BrandLogo{
+    color: #F05D5E !important;
+    font-family: 'Pacifico', cursive;
+}
+.user{
+    width :30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.Image{
+    display: block;
+   
+    height: 100%;
+    border-radius: 50%
+}
+.Add{
+    cursor: pointer;
+}

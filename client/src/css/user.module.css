@@ -1,0 +1,99 @@
+.Img{
+  
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+
+
+}
+.Avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+}
+
+ .Save{
+     border: none;
+     color: white;
+     border-radius: 5px;
+     background: #F05D5E;
+     padding: 3px 12px;
+ }
+ .InputFile{
+   border: none;
+   outline: none;
+ 
+
+   border-radius: 3px;
+   margin-bottom: 4px;
+   margin-top: 6px;
+ }
+ 
+
+.Label{
+   position: absolute;
+   font-size: 14px;
+   top: 5px;
+   transition: all 0.5s;
+   padding-left: 6px;
+}
+.LabelUp{
+   position: absolute;
+   font-size: 14px;
+   top: -17px;
+   transition: all 0.5s; 
+   color: #F05D5E;
+
+}
+.Update{
+   position: relative;
+  
+}
+.Input{
+  width: 200px;
+  padding: 0 8px;
+  margin-right: 10px;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  
+}
+
+
+.Modifier{
+   border: none;
+   outline: none;
+}
+.Pen{
+    color: black;
+    font-size: 16px;
+}
+.Submit{
+    padding: 3px 6px;
+    color: white;
+    background: #F05D5E ;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+
+}
+input[type=submit]:disabled,button[type=submit]:disabled{
+    background: #eeeeee;
+    cursor: not-allowed;
+}
+.DangerZone button{
+   background: #F05D5E;
+   border: none;
+   outline: none;
+   color: white;
+   padding: 4px 8px;
+   margin-top: 12px;
+   border-radius: 5px;
+
+}
+.Errors{
+    font-size: 12px;
+    color: #F05D5E;
+   
+}

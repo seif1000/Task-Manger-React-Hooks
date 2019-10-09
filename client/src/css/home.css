@@ -1,0 +1,86 @@
+/* #8ACB88  buuton*/
+
+/* #575761 footer */
+*{
+    box-sizing: border-box;
+}
+
+
+.mother_tab{
+   
+    height:595px;
+}
+.son_tab{
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    transition: all 0.4s;   
+
+
+}
+
+.son_tab:hover{
+    text-decoration: none;
+    cursor: pointer;
+    background: #F05D5E;
+    border-radius: 5px;
+    color: white;
+}
+.active{
+    text-decoration: none;
+    cursor: pointer;
+    background: #F05D5E;
+    border-radius: 5px;
+    color: white;
+}
+.active i{
+    color: white;
+}
+.son_tab:hover i{
+     color: white;
+}
+.fas,.far{
+    font-size: 20px;
+    color: #F05D5E
+}
+.corp{
+    position: relative;
+}
+.Pager{
+    text-align: center;
+    margin-top: 16px;
+}
+.Pager i{
+   
+    margin: 12px;
+}
+
+
+.Pager button{
+    padding: 3px 8px;
+    border: none;
+    background: #F05D5E;
+    color: white;
+    border-radius: 12px;
+    outline: none;
+  
+    
+ 
+}
+.Pager button:focus{
+    outline: none;
+}
+button:disabled{
+    border: none;
+    cursor: not-allowed;
+    background: #eeeeee;
+    cursor: not-allowed;
+}
+
+@media (max-width:786px){
+   .mother_tab{
+       height: 180px;
+   }
+}

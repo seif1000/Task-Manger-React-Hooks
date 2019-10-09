@@ -1,0 +1,35 @@
+
+
+.task-add{
+    margin:auto ;
+    width:60%;
+    background:  #eae672;;
+    padding: 1em;
+    border-radius: 5px;
+    position: relative;
+    border-top: 1px solid #555;
+    
+}
+.task-add:before{
+    
+    position: absolute;
+    content: '';
+    top: -3px;
+    left: 0;
+    height: 10px;
+    width: 99%;
+    background-image: -webkit-radial-gradient(5% 40%, circle, transparent 70%, #555 20%);
+    background-image: -moz-radial-gradient(5% 40%, circle, transparent 70%,   #555 20%);
+    background-image: -ms-radial-gradient(5% 40%, circle, transparent 70%,    #555 20%);
+    background-image: -o-radial-gradient(5% 40%, circle, transparent 70%,     #555 20%);
+    background-image: radial-gradient(circle at 5% 40%, transparent 65%, #555 25%);
+    background-size: 10px 12px
+}
+
+@media (max-width:786px){
+    /* .task-add{
+      width: 90%;
+      margin: auto;
+    
+    } */
+ }
