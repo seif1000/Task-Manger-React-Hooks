@@ -138,7 +138,9 @@ import  '../css/home.css';
             <div className="col-12 col-md-10">
                 <div className=' d-flex flex-wrap flex-row justify-content-around'>
                 
-                { user.taskItems.map(task=> <Task delete ={()=>{onDeleteTask(task._id)}} key={task._id} task={task}/>)}
+                { user.taskItems.map(task=> <Task delete ={()=>{
+                    onDeleteTask(task._id)
+                    }} key={task._id} task={task}/>)}
                 
                 
                 </div>

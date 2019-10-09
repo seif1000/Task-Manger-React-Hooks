@@ -67,7 +67,7 @@ import {Context} from '../context';
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ml-auto">
                 
-         { afterSlashChars ==='tasks'? <i onClick={showModalUp}  className={`fas fa-plus p-2 ${styles.Add}`}></i> : <i></i>}
+         { afterSlashChars ==='tasks' || afterSlashChars ==='tasks?' ?<i onClick={showModalUp}  className={`fas fa-plus p-2 ${styles.Add}`}></i> : <i></i>}
               <a className="nav-item nav-link px-2" href="/tasks">tasks</a>
                <form onSubmit={logoutHnadler} className="px-2">
                   <input type="submit" className={styles.LogoutButton} value="logout" />
