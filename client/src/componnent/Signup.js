@@ -17,7 +17,7 @@ import {withBack} from './HOC/isAuth';
             document.body.className = NaN;
             
         }
-    })
+    },[])
     const signup =async () => {
       
     

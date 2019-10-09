@@ -18,7 +18,7 @@ import  '../css/home.css';
         const token = localStorage.getItem('jwtToken');
          
           const res = await axios.get(
-              `http://localhost:5000/users/avatar`,
+              `/users/avatar`,
               {
                   headers:{  "Authorization" :`Bearer ${token}` },
                   responseType:'arraybuffer'
@@ -37,7 +37,7 @@ import  '../css/home.css';
      
       const onDeleteTask = async(id)=>{
         const token = localStorage.getItem('jwtToken');
-           const res = await axios.delete(`http://localhost:5000/tasks/${id}`,{
+           const res = await axios.delete(`/tasks/${id}`,{
                 headers:{
                     "Authorization" :`Bearer ${token}`
                 }
@@ -59,7 +59,7 @@ import  '../css/home.css';
     const fetchTasks =async (query,skip)=>{
        // const skip = 6 * (user.pageNo-1);
         const token = localStorage.getItem('jwtToken');
-        const res = await axios.get(`http://localhost:5000/tasks?completed=${query}&limit=6&skip=${skip}`,{
+        const res = await axios.get(`/tasks?completed=${query}&limit=6&skip=${skip}`,{
         headers:{
             "Authorization" :`Bearer ${token}`
         }

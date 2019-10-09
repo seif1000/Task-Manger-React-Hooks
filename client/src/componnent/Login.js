@@ -14,7 +14,7 @@ function Login(props) {
             document.body.className = NaN;
             
         }
-    })
+    },[])
     
     const login =async () => {
     

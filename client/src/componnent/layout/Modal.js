@@ -24,17 +24,17 @@ import {useMediaQuery}from 'react-responsive';
 
     const AddTask  = async(e)=>{
         
-        const token = localStorage.getItem('jwtToken');
-       const res = await axios.post(`/tasks`,{
-           description:inputs.description,
-           completed:task.completed
-       },{  headers:{
-         "Authorization" :`Bearer ${token}`
-     }
-       });
+       
 
           try {
-            
+            const token = localStorage.getItem('jwtToken');
+            const res = await axios.post(`/tasks`,{
+                description:inputs.description,
+                completed:task.completed
+            },{  headers:{
+              "Authorization" :`Bearer ${token}`
+          }
+            });
             setUser(user=>({...user,show:false,active:task.completed}));
           
             props.click(task.completed);
