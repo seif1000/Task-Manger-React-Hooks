@@ -30,7 +30,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 1. Clone or Download the repository
 
 	```
-	$ git git@github.com:seif1000/Task-Manger-React-Hooks.git
+	$ git clone https://github.com/seif1000/Task-Manger-React-Hooks.git
 	$ cd Task-Manger-React-Hooks
 	```
 2. Install Dependencies
