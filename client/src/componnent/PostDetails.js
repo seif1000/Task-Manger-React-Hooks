@@ -21,18 +21,19 @@ import {Context} from '../context';
      }
      const [task,setTask] = useState(initialsate);
      const getAvatar =async ()=>{
-        const token = localStorage.getItem('jwtToken');
-         
-          const res = await axios.get(
-              `/users/avatar`,
-              {
-                  headers:{  "Authorization" :`Bearer ${token}` },
-                  responseType:'arraybuffer'
-               
-                }
-              )
+       
           try {
-            console.log(res.data)
+            const token = localStorage.getItem('jwtToken');
+         
+            const res = await axios.get(
+                `/users/avatar`,
+                {
+                    headers:{  "Authorization" :`Bearer ${token}` },
+                    responseType:'arraybuffer'
+                 
+                  }
+                )
+         
          
             const image =   new Buffer(res.data, 'binary').toString('base64');
           
@@ -44,14 +45,15 @@ import {Context} from '../context';
     }
      const {id}  =props.match.params;
      const fetchPost =async ()=>{
-        const token = localStorage.getItem('jwtToken');
-       const res = await axios.get(`/tasks/${id}`,{
-        headers:{
-            "Authorization" :`Bearer ${token}`
-        }
-    });
+      
 
        try {
+        const token = localStorage.getItem('jwtToken');
+        const res = await axios.get(`/tasks/${id}`,{
+         headers:{
+             "Authorization" :`Bearer ${token}`
+         }
+     });
            setTask(task=>(
                {
                    ...task,
@@ -65,16 +67,17 @@ import {Context} from '../context';
        }
      }
      const editTask = async()=>{
-        const token = localStorage.getItem('jwtToken');
-          const res = await axios.patch(`/tasks/${id}`,{
-              description:inputs.description,
-              completed:task.completed
-          },{  headers:{
-            "Authorization" :`Bearer ${token}`
-        }
-          });
+     
 
              try {
+                const token = localStorage.getItem('jwtToken');
+                const res = await axios.patch(`/tasks/${id}`,{
+                    description:inputs.description,
+                    completed:task.completed
+                },{  headers:{
+                  "Authorization" :`Bearer ${token}`
+              }
+                });
                 setTask(task=>(
                     {
                         ...task,

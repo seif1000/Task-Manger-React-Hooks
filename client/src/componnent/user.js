@@ -17,18 +17,18 @@ import FormData from 'form-data';
      const [modifier,setModifier] = useState(initilaState);
     const [user, setUser] = useContext(Context);
     const getAvatar =async ()=>{
-        const token = localStorage.getItem('jwtToken');
-         
-          const res = await axios.get(
-              `/users/avatar`,
-              {
-                  headers:{  "Authorization" :`Bearer ${token}` },
-                  responseType:'arraybuffer'
-               
-                }
-              )
+      
           try {
+            const token = localStorage.getItem('jwtToken');
          
+            const res = await axios.get(
+                `/users/avatar`,
+                {
+                    headers:{  "Authorization" :`Bearer ${token}` },
+                    responseType:'arraybuffer'
+                 
+                  }
+                )
             const image =   new Buffer(res.data, 'binary').toString('base64');
           
             setUser(user=>({...user,avatar:image}))
@@ -75,18 +75,18 @@ import FormData from 'form-data';
         
     }
     const  getMe = async ()=>{
-        const token = localStorage.getItem('jwtToken');
-         
-        const res = await axios.get(
-            `/users/me`,
-            {
-                headers:{  "Authorization" :`Bearer ${token}` },
-             
-              }
-            )
+     
         try {
            
-        
+          const token = localStorage.getItem('jwtToken');
+         
+          const res = await axios.get(
+              `/users/me`,
+              {
+                  headers:{  "Authorization" :`Bearer ${token}` },
+               
+                }
+              )
           setUser(user=>({...user,userInfo:res.data}))
       
         } catch (error) {
@@ -98,10 +98,11 @@ import FormData from 'form-data';
         setModifier(modifier=>({...modifier,modif:!modif}))
     }
     const updateMe  =async()=>{
-        const token = localStorage.getItem('jwtToken');
+      
          
     
         try {
+          const token = localStorage.getItem('jwtToken');
           const res = await axios.patch(
             `/users/me`,inputs,
             {
@@ -121,8 +122,9 @@ import FormData from 'form-data';
         }
     }
      const removeMe =async  ()=>{
-      const token = localStorage.getItem('jwtToken');
+   
        try {
+        const token = localStorage.getItem('jwtToken');
         const res = await  axios.delete('/users/me', {
           headers:{  "Authorization" :`Bearer ${token}` },
        

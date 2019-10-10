@@ -15,18 +15,18 @@ import  '../css/home.css';
     
 
     const getAvatar =async ()=>{
-        const token = localStorage.getItem('jwtToken');
-         
-          const res = await axios.get(
-              `/users/avatar`,
-              {
-                  headers:{  "Authorization" :`Bearer ${token}` },
-                  responseType:'arraybuffer'
-                  //responseType: 'arraybuffer'
-                }
-              )
+     
           try {
-             
+            const token = localStorage.getItem('jwtToken');
+         
+            const res = await axios.get(
+                `/users/avatar`,
+                {
+                    headers:{  "Authorization" :`Bearer ${token}` },
+                    responseType:'arraybuffer'
+                    //responseType: 'arraybuffer'
+                  }
+                )
             const image =   new Buffer(res.data, 'binary').toString('base64');
             setUser(user=>({...user,avatar:image}))
         
@@ -36,15 +36,16 @@ import  '../css/home.css';
     }
      
       const onDeleteTask = async(id)=>{
-        const token = localStorage.getItem('jwtToken');
-           const res = await axios.delete(`/tasks/${id}`,{
-                headers:{
-                    "Authorization" :`Bearer ${token}`
-                }
-                })
-
+       
 
                 try {
+                    const token = localStorage.getItem('jwtToken');
+                    const res = await axios.delete(`/tasks/${id}`,{
+                         headers:{
+                             "Authorization" :`Bearer ${token}`
+                         }
+                         })
+         
                     setUser(user=>({
                         ...user,
                         taskItems:user.taskItems.filter(item=>item._id === id)
@@ -58,13 +59,14 @@ import  '../css/home.css';
      
     const fetchTasks =async (query,skip)=>{
        // const skip = 6 * (user.pageNo-1);
-        const token = localStorage.getItem('jwtToken');
-        const res = await axios.get(`/tasks?completed=${query}&limit=6&skip=${skip}`,{
-        headers:{
-            "Authorization" :`Bearer ${token}`
-        }
-        });
+     
         try {
+            const token = localStorage.getItem('jwtToken');
+            const res = await axios.get(`/tasks?completed=${query}&limit=6&skip=${skip}`,{
+            headers:{
+                "Authorization" :`Bearer ${token}`
+            }
+            });
                setUser(user=>({...user,taskItems:res.data}));
               
                

@@ -8,17 +8,17 @@ import axios from 'axios';
 export default function Task(props) {
     const [user, setUser] = useContext(Context);
     const  getMe = async ()=>{
-        const token = localStorage.getItem('jwtToken');
-         
-        const res = await axios.get(
-            `/users/me`,
-            {
-                headers:{  "Authorization" :`Bearer ${token}` },
-             
-              }
-            )
+        
         try {
-           
+            const token = localStorage.getItem('jwtToken');
+         
+            const res = await axios.get(
+                `/users/me`,
+                {
+                    headers:{  "Authorization" :`Bearer ${token}` },
+                 
+                  }
+                )
         
           setUser(user=>({...user,userInfo:res.data}))
       
