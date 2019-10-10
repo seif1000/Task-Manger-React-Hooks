@@ -7,10 +7,6 @@ Task manger to create edit delete task using express.js and mongodb as server an
 + [Demo](#demo)
 + [Features](#features)
 + [Installation](#installation)
-+ [How It Works](#how-it-works)
-+ [Support](#support)
-+ [Contribute](#contribute)
-+ [License](#license)
 
 ## Demo<a name="demo"></a>
 Check [Demo](https://immense-coast-59384.herokuapp.com/)
