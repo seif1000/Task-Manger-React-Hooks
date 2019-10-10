@@ -24,7 +24,7 @@ import FormData from 'form-data';
             const res = await axios.get(
                 `/users/avatar`,
                 {
-                    headers:{  "Authorization" :`Bearer ${user.authToken}` },
+                    headers:{  "Authorization" :`Bearer ${token}` },
                     responseType:'arraybuffer'
                  
                   }
@@ -57,7 +57,7 @@ import FormData from 'form-data';
           data.append('avatar',file)
           const res = await  axios.post('/users/me/avatar', data,
                 {
-                   headers: {"Authorization" :`Bearer ${user.authToken}`},
+                   headers: {"Authorization" :`Bearer ${token}`},
                    responseType:'arraybuffer'
    
                });
@@ -83,7 +83,7 @@ import FormData from 'form-data';
           const res = await axios.get(
               `/users/me`,
               {
-                  headers:{  "Authorization" :`Bearer ${user.authToken}` },
+                  headers:{  "Authorization" :`Bearer ${token}` },
                
                 }
               )
@@ -106,7 +106,7 @@ import FormData from 'form-data';
           const res = await axios.patch(
             `/users/me`,inputs,
             {
-                headers:{  "Authorization" :`Bearer ${user.authToken}` },
+                headers:{  "Authorization" :`Bearer ${token}` },
              
               }
             )
@@ -126,7 +126,7 @@ import FormData from 'form-data';
        try {
         const token = localStorage.getItem('jwtToken');
         const res = await  axios.delete('/users/me', {
-          headers:{  "Authorization" :`Bearer ${user.authToken}` },
+          headers:{  "Authorization" :`Bearer ${token}` },
        
         });
         localStorage.removeItem('jwtToken');

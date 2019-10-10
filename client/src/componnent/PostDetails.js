@@ -29,7 +29,8 @@ import {Context} from '../context';
                 `/users/avatar`,
                 {
                     headers:{  "Authorization" :`Bearer ${token}` },
-                    responseType:'arraybuffer'
+                    responseType:'arraybuffer',
+                   
                  
                   }
                 )

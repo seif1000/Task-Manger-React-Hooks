@@ -22,7 +22,7 @@ import  '../css/home.css';
             const res = await axios.get(
                 `/users/avatar`,
                 {
-                    headers:{  "Authorization" :`Bearer ${user.authToken}` },
+                    headers:{  "Authorization" :`Bearer ${token}` },
                     responseType:'arraybuffer'
                     //responseType: 'arraybuffer'
                   }
@@ -42,7 +42,7 @@ import  '../css/home.css';
                     const token = localStorage.getItem('jwtToken');
                     const res = await axios.delete(`/tasks/${id}`,{
                          headers:{
-                             "Authorization" :`Bearer ${user.authToken}`
+                             "Authorization" :`Bearer ${token}`
                          }
                          })
          
@@ -64,7 +64,7 @@ import  '../css/home.css';
             const token = localStorage.getItem('jwtToken');
             const res = await axios.get(`/tasks?completed=${query}&limit=6&skip=${skip}`,{
             headers:{
-                "Authorization" :`Bearer ${user.authToken}`
+                "Authorization" :`Bearer ${token}`
             }
             });
                setUser(user=>({...user,taskItems:res.data}));
@@ -94,12 +94,7 @@ import  '../css/home.css';
         }  
        
     useEffect( () => {
-        setUser((user)=>({
-            ...user,
-            authToken:localStorage.getItem('jwtToken'),
-          
          
-         }));
         fetchTasks(false);
         getAvatar();
       
