@@ -32,7 +32,7 @@ import {useMediaQuery}from 'react-responsive';
                 description:inputs.description,
                 completed:task.completed
             },{  headers:{
-              "Authorization" :`Bearer ${token}`
+                "X-header" :`Bearer ${token}`
           }
             });
             setUser(user=>({...user,show:false,active:task.completed}));

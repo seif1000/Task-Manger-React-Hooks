@@ -3,18 +3,7 @@ const User = require('../models/user')
 const {jwtSecret} = require('../config/key');
 const auth = async (req, res, next) => {
     try {
-        // if (typeof req.headers.authorization !== 'string') {
-        //     res.sendStatus(400);
-        //     return;
-        //   }
-        
-       const token =  req.headers.authorization.split(' ')[1];
-
-    //    if (tokens.length < 2) {
-    //     res.sendStatus(400);
-    //     return;
-    //   }
-    
+        const token = req.header('X-header').replace('Bearer ', '')
         const decoded = jwt.verify(token, jwtSecret);
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token })
 

@@ -15,7 +15,7 @@ export default function Task(props) {
             const res = await axios.get(
                 `/users/me`,
                 {
-                    headers:{  "Authorization" :`Bearer ${token}` },
+                    headers:{ "X-header" :`Bearer ${token}` },
                  
                   }
                 )

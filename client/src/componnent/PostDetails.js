@@ -28,7 +28,7 @@ import {Context} from '../context';
             const res = await axios.get(
                 `/users/avatar`,
                 {
-                    headers:{  "Authorization" :`Bearer ${token}` },
+                    headers:{  "X-header" :`Bearer ${token}` },
                     responseType:'arraybuffer',
                    
                  
@@ -52,7 +52,7 @@ import {Context} from '../context';
         const token = localStorage.getItem('jwtToken');
         const res = await axios.get(`/tasks/${id}`,{
          headers:{
-             "Authorization" :`Bearer ${token}`
+            "X-header":`Bearer ${token}`
          }
      });
            setTask(task=>(
@@ -76,7 +76,7 @@ import {Context} from '../context';
                     description:inputs.description,
                     completed:task.completed
                 },{  headers:{
-                  "Authorization" :`Bearer ${token}`
+                    "X-header":`Bearer ${token}`
               }
                 });
                 setTask(task=>(
