@@ -15,7 +15,7 @@ export default function Task(props) {
             const res = await axios.get(
                 `/users/me`,
                 {
-                    headers:{  "Authorization" :`Bearer ${token}` },
+                    headers:{  "Authorization" :`Bearer ${user.authToken}` },
                  
                   }
                 )
@@ -27,6 +27,12 @@ export default function Task(props) {
         }
     }
    useEffect(()=>{
+    setUser((user)=>({
+        ...user,
+        authToken:localStorage.getItem('jwtToken'),
+      
+     
+     }));
        getMe();
    },[])
     return (

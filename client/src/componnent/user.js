@@ -24,7 +24,7 @@ import FormData from 'form-data';
             const res = await axios.get(
                 `/users/avatar`,
                 {
-                    headers:{  "Authorization" :`Bearer ${token}` },
+                    headers:{  "Authorization" :`Bearer ${user.authToken}` },
                     responseType:'arraybuffer'
                  
                   }
@@ -57,7 +57,7 @@ import FormData from 'form-data';
           data.append('avatar',file)
           const res = await  axios.post('/users/me/avatar', data,
                 {
-                   headers: {"Authorization" :`Bearer ${token}`},
+                   headers: {"Authorization" :`Bearer ${user.authToken}`},
                    responseType:'arraybuffer'
    
                });
@@ -83,7 +83,7 @@ import FormData from 'form-data';
           const res = await axios.get(
               `/users/me`,
               {
-                  headers:{  "Authorization" :`Bearer ${token}` },
+                  headers:{  "Authorization" :`Bearer ${user.authToken}` },
                
                 }
               )
@@ -106,7 +106,7 @@ import FormData from 'form-data';
           const res = await axios.patch(
             `/users/me`,inputs,
             {
-                headers:{  "Authorization" :`Bearer ${token}` },
+                headers:{  "Authorization" :`Bearer ${user.authToken}` },
              
               }
             )
@@ -126,7 +126,7 @@ import FormData from 'form-data';
        try {
         const token = localStorage.getItem('jwtToken');
         const res = await  axios.delete('/users/me', {
-          headers:{  "Authorization" :`Bearer ${token}` },
+          headers:{  "Authorization" :`Bearer ${user.authToken}` },
        
         });
         localStorage.removeItem('jwtToken');
@@ -142,6 +142,12 @@ import FormData from 'form-data';
      }
     const {inputs, handleInputChange, handleSubmit} = useSignUpForm(updateMe,[]);
     useEffect (()=>{
+      setUser((user)=>({
+        ...user,
+        authToken:localStorage.getItem('jwtToken'),
+      
+     
+     }));
         getAvatar();
         getMe();
     },[])
