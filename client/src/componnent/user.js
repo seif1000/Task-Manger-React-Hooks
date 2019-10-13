@@ -229,4 +229,4 @@ import FormData from 'form-data';
         </div>
     )
 }
-export default withAuth(User);
+export default User;
